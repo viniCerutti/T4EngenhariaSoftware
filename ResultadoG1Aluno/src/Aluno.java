@@ -1,3 +1,5 @@
+import java.text.DecimalFormat;
+
 /*PLEASE DO NOT EDIT THIS CODE*/
 /*This code was generated using the UMPLE 1.26.0-dd58bc5-3568 modeling language!*/
 
@@ -26,17 +28,14 @@ public class Aluno {
 	// CONSTRUCTOR
 	// ------------------------
 
-	public Aluno(String aNome, String aMatricula, float aP1, float aP2, float aT, float aE, float aG2, int aFaltas,
-			float aG1, GrauFinal aResultado) {
+	public Aluno(String aNome, String aMatricula, float aP1, float aP2, float aT, float aE, int aFaltas, GrauFinal aResultado) {
 		nome = aNome;
 		matricula = aMatricula;
 		p1 = aP1;
 		p2 = aP2;
 		t = aT;
 		e = aE;
-		g2 = aG2;
 		faltas = aFaltas;
-		g1 = aG1;
 		resultado = aResultado;
 	}
 
@@ -71,7 +70,9 @@ public class Aluno {
 	}
 
 	public void setG2(float aG2) {
-		g2 = aG2;
+		DecimalFormat oneDForm = new DecimalFormat("#.#"); 
+
+		g2 = Float.valueOf(oneDForm.format(aG2));
 	}
 
 	public void setFaltas(int aFaltas) {
@@ -79,7 +80,8 @@ public class Aluno {
 	}
 
 	public void setG1(float aG1) {
-		g1 = aG1;
+		DecimalFormat oneDForm = new DecimalFormat("#.#"); 
+		g1 = Float.valueOf(oneDForm.format(aG1));
 	}
 
 	public void setResultado(GrauFinal aResultado) {
