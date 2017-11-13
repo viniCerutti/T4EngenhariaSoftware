@@ -28,7 +28,7 @@ public class Aluno {
 	// CONSTRUCTOR
 	// ------------------------
 
-	public Aluno(String aNome, String aMatricula, float aP1, float aP2, float aT, float aE, int aFaltas, GrauFinal aResultado) {
+	public Aluno(String aNome, String aMatricula, float aP1, float aP2, float aT, float aE, int aFaltas) {
 		nome = aNome;
 		matricula = aMatricula;
 		p1 = aP1;
@@ -36,7 +36,7 @@ public class Aluno {
 		t = aT;
 		e = aE;
 		faltas = aFaltas;
-		resultado = aResultado;
+		resultado = GrauFinal.APR;
 	}
 
 	// ------------------------
@@ -44,9 +44,7 @@ public class Aluno {
 	// ------------------------
 
 	public void setNome(String aNome) {
-
 		nome = aNome;
-
 	}
 
 	public void setMatricula(String aMatricula) {
@@ -126,11 +124,14 @@ public class Aluno {
 	}
 
 	public GrauFinal getResultado() {
+		if(faltas > 15) { resultado = GrauFinal.REP;}
+		else if(g1 >= 7.0) {resultado = GrauFinal.APR;}
+		else if (g1 < 4.0) {resultado = GrauFinal.REP;}
+		else if (g1 + g2 >= 5.0) {resultado = GrauFinal.APR;}
+		else resultado = GrauFinal.REP;
 		return resultado;
 	}
 
-	public void delete() {
-	}
 
 	public String toString() {
 		return super.toString() + "[" + "nome" + ":" + getNome() + "," + "matricula" + ":" + getMatricula() + "," + "p1"
