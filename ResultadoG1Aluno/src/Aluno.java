@@ -120,7 +120,7 @@ public class Aluno {
 	}
 
 	public float getG1() {
-		return g1;
+		return ((p1+p2+t+e)/4);
 	}
 
 	public GrauFinal getResultado() {
