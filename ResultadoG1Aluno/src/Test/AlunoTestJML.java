@@ -1,3 +1,5 @@
+package Test;
+
 import Grau.Aluno;
 
 public class AlunoTestJML {
