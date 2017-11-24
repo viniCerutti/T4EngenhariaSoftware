@@ -1,5 +1,3 @@
-import java.text.DecimalFormat;
-
 /*PLEASE DO NOT EDIT THIS CODE*/
 /*This code was generated using the UMPLE 1.26.0-dd58bc5-3568 modeling language!*/
 
@@ -83,9 +81,7 @@ public class Aluno {
 	}
 
 	public /*@ pure helper @*/ void setG2(float aG2) {
-		DecimalFormat oneDForm = new DecimalFormat("#.#"); 
-
-		g2 = Float.valueOf(oneDForm.format(aG2));
+		g2 = aG2;
 	}
 
 	public /*@ pure helper @*/ void setFaltas(int aFaltas) {
@@ -93,8 +89,7 @@ public class Aluno {
 	}
 
 	public /*@ pure helper @*/  void setG1(float aG1) {
-		DecimalFormat oneDForm = new DecimalFormat("#.#"); 
-		g1 = Float.valueOf(oneDForm.format(aG1));
+		g1 = aG1;
 	}
 
 	public void setResultado(GrauFinal aResultado) {
@@ -149,8 +144,8 @@ public class Aluno {
 	 @*/
 	public GrauFinal getResultado() {
 		if(faltas > 15) { resultado = GrauFinal.REP;}
-		else if(g1 >= 7.0) {resultado = GrauFinal.APR;}
 		else if (g1 < 4.0) {resultado = GrauFinal.REP;}
+		else if(g1 >= 7.0) {resultado = GrauFinal.APR;}
 		else if (g1 + g2 >= 5.0) {resultado = GrauFinal.APR;}
 		else resultado = GrauFinal.REP;
 		return resultado;
