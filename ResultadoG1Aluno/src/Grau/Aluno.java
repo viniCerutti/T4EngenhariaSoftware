@@ -1,3 +1,4 @@
+package Grau;
 /*PLEASE DO NOT EDIT THIS CODE*/
 /*This code was generated using the UMPLE 1.26.0-dd58bc5-3568 modeling language!*/
 
@@ -13,13 +14,13 @@ public class Aluno {
 	// Aluno Attributes
 	private String nome;
 	private String matricula;
-	private float p1;
-	private float p2;
-	private float t;
-	private float e;
-	private float g2;
+	private double p1;
+	private double p2;
+	private double t;
+	private double e;
+	private double g2;
 	private int faltas;
-	private float g1;
+	private double g1;
 	private GrauFinal resultado;
 
 	// ------------------------
@@ -40,7 +41,7 @@ public class Aluno {
 	 @ requires aNome.contains(" ") && aNome.length() >=5 && aNome.length() <= 36;
 	 @ requires aMatricula.length() == 8;
 	 @*/
-	public Aluno(String aNome, String aMatricula, float aP1, float aP2, float aT, float aE, int aFaltas) {
+	public Aluno(String aNome, String aMatricula, double aP1, double aP2, double aT, double aE, int aFaltas) {
 		aNome.length();
 		nome = aNome;
 		matricula = aMatricula;
@@ -64,23 +65,23 @@ public class Aluno {
 		matricula = aMatricula;
 	}
 
-	public /*@ pure helper @*/ void setP1(float aP1) {
+	public /*@ pure helper @*/ void setP1(double aP1) {
 		p1 = aP1;
 	}
 
-	public /*@ pure helper @*/ void setP2(float aP2) {
+	public /*@ pure helper @*/ void setP2(double aP2) {
 		p2 = aP2;
 	}
 
-	public /*@ pure helper @*/ void setT(float aT) {
+	public /*@ pure helper @*/ void setT(double aT) {
 		t = aT;
 	}
 
-	public /*@ pure helper @*/ void setE(float aE) {
+	public /*@ pure helper @*/ void setE(double aE) {
 		e = aE;
 	}
 
-	public /*@ pure helper @*/ void setG2(float aG2) {
+	public /*@ pure helper @*/ void setG2(double aG2) {
 		g2 = aG2;
 	}
 
@@ -88,7 +89,7 @@ public class Aluno {
 		faltas = aFaltas;
 	}
 
-	public /*@ pure helper @*/  void setG1(float aG1) {
+	public /*@ pure helper @*/  void setG1(double aG1) {
 		g1 = aG1;
 	}
 
@@ -105,23 +106,23 @@ public class Aluno {
 		return matricula;
 	}
 
-	public /*@ pure helper @*/  float getP1() {
+	public /*@ pure helper @*/  double getP1() {
 		return p1;
 	}
 
-	public /*@ pure helper @*/ float  getP2() {
+	public /*@ pure helper @*/ double  getP2() {
 		return p2;
 	}
 
-	public /*@ pure helper @*/ float getT() {
+	public /*@ pure helper @*/ double getT() {
 		return t;
 	}
 
-	public /*@ pure helper @*/ float getE() {
+	public /*@ pure helper @*/ double getE() {
 		return e;
 	}
 
-	public /*@ pure helper @*/ float getG2() {
+	public /*@ pure helper @*/ double getG2() {
 		return g2;
 	}
 
@@ -132,7 +133,7 @@ public class Aluno {
 	/*@
 	 @ ensures \result == ((getP1()+getP2()+getT()+getE())/4); 
 	 @*/
-	public float getG1() {
+	public/*@ pure helper @*/ double getG1() {
 		return ((p1+p2+t+e)/4);
 	}
 	/*@
