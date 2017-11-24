@@ -1,5 +1,3 @@
-package Test;
-
 import Grau.Aluno;
 
 public class AlunoTestJML {
@@ -52,6 +50,7 @@ public class AlunoTestJML {
 	public static  void testNotasG1(){
 		System.out.println("Teste 4");
 		Aluno teste = new Aluno ("Teste Notas","13295678",10,10,10,10,0);
+		teste.getG1();
 	
 	}
 	
@@ -61,7 +60,8 @@ public class AlunoTestJML {
 	*/
 	public static  void testResultadoFinalFaltas(){
 		System.out.println("Teste 5");
-		Aluno teste = new Aluno ("Teste Notas","13295678",10,10,10,10,16);
+		Aluno teste = new Aluno ("Teste Notas","13295678",10,10,10,10,17);
+		teste.getResultado();
 	
 	}
 	
@@ -72,7 +72,7 @@ public class AlunoTestJML {
 	public static  void testResultadoFinalMenorG1(){
 		System.out.println("Teste 6");
 		Aluno teste = new Aluno ("Teste Notas","13295678",3,3,3,3,0);
-	
+		teste.getResultado();
 	}
 	
 	/*
@@ -82,6 +82,7 @@ public class AlunoTestJML {
 	public static  void testResultadoFinalMaiorG1(){
 		System.out.println("Teste 7");
 		Aluno teste = new Aluno ("Teste Notas","13295678",7,7,7,7,0);
+		teste.getResultado();
 	
 	}
 	
@@ -93,7 +94,7 @@ public class AlunoTestJML {
 		System.out.println("Teste 8");
 		Aluno teste = new Aluno ("Teste Notas","13295678",4,4,4,4,0);
 		teste.setG2(6);
-	
+		teste.getResultado();
 	}
 	
 	/*
@@ -104,5 +105,6 @@ public class AlunoTestJML {
 		System.out.println("Teste 9");
 		Aluno teste = new Aluno ("Teste Notas","13295678",4,4,4,4,0);
 		teste.setG2(5);
+		teste.getResultado();
 	}
 }
