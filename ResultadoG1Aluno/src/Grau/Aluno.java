@@ -140,14 +140,14 @@ public class Aluno {
 	 @ ensures (getFaltas() > 15) ==> \result.equals(GrauFinal.REP);
 	 @ ensures (getG1() >= 7.0) ==> \result.equals(GrauFinal.APR);
 	 @ ensures (getG1() < 4.0) ==> \result.equals(GrauFinal.REP);
-	 @ ensures ((getG1()+getG2()) >= 5.0) ==> \result.equals(GrauFinal.APR);
+	 @ ensures (((getG1()+getG2())/2) >= 5.0) ==> \result.equals(GrauFinal.APR);
 	 @ ensures \result.equals(GrauFinal.REP);
 	 @*/
 	public GrauFinal getResultado() {
 		if(faltas > 15) { resultado = GrauFinal.REP;}
-		else if (g1 < 4.0) {resultado = GrauFinal.REP;}
-		else if(g1 >= 7.0) {resultado = GrauFinal.APR;}
-		else if (g1 + g2 >= 5.0) {resultado = GrauFinal.APR;}
+		else if (getG1() < 4.0) {resultado = GrauFinal.REP;}
+		else if(getG1() >= 7.0) {resultado = GrauFinal.APR;}
+		else if ((getG1() + g2)/2 >= 5.0) {resultado = GrauFinal.APR;}
 		else resultado = GrauFinal.REP;
 		return resultado;
 	}
