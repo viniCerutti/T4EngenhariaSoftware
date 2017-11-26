@@ -56,11 +56,16 @@ public class Aluno {
 	// ------------------------
 	// INTERFACE
 	// ------------------------
-
+	
+	/*@
+	 @ requires aNome.contains(" ") && aNome.length() >=5 && aNome.length() <= 36;
+	 @*/
 	public void setNome(String aNome) {
 		nome = aNome;
 	}
-
+	/*@
+	 @ requires aMatricula.length() == 8;
+	 @*/
 	public void setMatricula(String aMatricula) {
 		matricula = aMatricula;
 	}
